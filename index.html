@@ -5,12 +5,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">   
-      <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Bad+Script|Lobster|Pacifico|Patua+One|Roboto|Sedgwick+Ave" rel="stylesheet">
       <link href="css/styles.css" type="text/css" rel="stylesheet">
     </head>
     <header>TO-DO MANAGER</header>
@@ -25,23 +20,23 @@
         </div>
         <div class="body-container">
             <div class="to-do card-panel teal lighten-2">
-                <div>TO DO</div>
-                <ul id="to-do_task-holder" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <div class="z-depth-2">TO DO</div>
+                <ul id="to-do_task-holder" ondrop="drop_handler(event,this);" ondragover="dragover_handler(event);">
                 </ul>
             </div>
             <div class="in-progress card-panel teal lighten-2">
-                <div>IN PROGRESS</div>
-                <ul id="in-progress_task-holder" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <div class="z-depth-2">IN PROGRESS</div>
+                <ul id="in-progress_task-holder" ondrop="drop_handler(event,this);" ondragover="dragover_handler(event);">
                 </ul>
             </div>
             <div class="in-review card-panel teal lighten-2">
-                <div>IN REVIEW</div>
-                <ul id="in-review_task-holder" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <div class="z-depth-2">IN REVIEW</div>
+                <ul id="in-review_task-holder" ondrop="drop_handler(event,this);" ondragover="dragover_handler(event);">
                 </ul>
             </div>
             <div class="done card-panel teal lighten-2">
-                <div>DONE</div>
-                <ul id="done_task-holder" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <div class="z-depth-2">DONE</div>
+                <ul id="done_task-holder" ondrop="drop_handler(event,this);" ondragover="dragover_handler(event);">
                 </ul>
             </div>
         </div>    

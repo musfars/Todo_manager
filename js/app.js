@@ -8,15 +8,17 @@ function dragover_handler(ev) {
  // Set the dropEffect to move
  ev.dataTransfer.dropEffect = "move"
 }
-function drop_handler(ev) {
+function drop_handler(ev,el) {
  ev.preventDefault();
  // Get the id of the target and add the moved element to the target's DOM
  var data = ev.dataTransfer.getData("text");
- ev.target.appendChild(document.getElementById(data));
+ console.log(ev.target.id);
+ el.appendChild(document.getElementById(data));
 }
 
 var taskInput = document.getElementById("new-task");
 var addButton = document.getElementById("add-task");
+
 var tasksHolder = document.getElementById("to-do_task-holder");
 var i = 0;
 
@@ -29,6 +31,7 @@ var createNewTask = function(taskString){
     editInput.className = "edit";
     deleteButton.className= "material-icons";
     deleteButton.className = "close";
+    deleteButton.setAttribute("id","deleteButton");
     taskName.className = "taskName";
     taskName.innerText = taskString;
     deleteButton.innerHTML = "X";
@@ -59,9 +62,8 @@ var editTask = function(){
 var addTask = function(){
     if(taskInput.value !== ""){
         var listItem = createNewTask(taskInput.value);
-                listItem.ondblclick = editTask;
+        // listItem.ondblclick = editTask;
         tasksHolder.appendChild(listItem);
-
         taskInput.value = "";
     }
     else{

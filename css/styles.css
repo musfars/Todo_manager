@@ -1,0 +1,77 @@
+body{
+    background: #2979ff ;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body-container{
+
+}
+
+.card-panel{
+    display:inline-block;
+    margin: 8px;
+    width: 23.5%;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    padding: 8px 2px;
+    font-size: 24px !important;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    background: #1565c0;
+    font-size: 40px;
+    color:#fafafa;
+    font-family: 'Sedgwick Ave', cursive;
+    padding: 8px;
+}
+
+.new-todo{
+    display: flex;
+    text-align: center;
+    margin: 16px 14px;
+}
+
+.new-todo input{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 24px !important;
+    font-weight: unset;
+}
+ .chip{
+     width: 100%;
+     text-transform: unset !important;
+     padding-top: 8px;
+     padding-bottom: 8px;
+     box-sizing: border-box;
+ }
+ 
+ .chip i{
+     font-family: sans-serif;
+ }
+
+  ul{
+     height: 100px;
+ } 
+ 
+ li{
+     font-size: 20px !important;
+ }
+
+ .taskName{
+     font-family: 'Patua One', cursive;
+     font-size: 20px;
+ }
+
+.editMode input[type=text] {
+  display:block;
+}
+
+.editMode label {
+  display:none;
+}
+
+ .edit{
+    display: none;
+} 

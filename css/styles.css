@@ -87,3 +87,8 @@ li{
 .edit{
     display: none;
 } 
+
+.progressStatus{
+    font-family: 'Passion One', cursive;
+    font-size: 16px;
+}

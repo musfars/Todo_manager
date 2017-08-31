@@ -47,6 +47,7 @@ var createNewTask = function(taskString){
     progress.className = "progressStatus";
     editInput.type = "text";
     editInput.className = "edit";
+    editInput.setAttribute("id","editBox");
     deleteButton.className= "material-icons";
     deleteButton.className = "close";
     deleteButton.setAttribute("id","deleteButton");
@@ -90,6 +91,7 @@ var addTask = function(){
     else{
         alert("Input cannot be empty");
     }
+    
 }
 
 addButton.addEventListener("click", addTask);

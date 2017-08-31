@@ -12,7 +12,23 @@ function drop_handler(ev,el) {
  ev.preventDefault();
  // Get the id of the target and add the moved element to the target's DOM
  var data = ev.dataTransfer.getData("text");
- console.log(ev.target.id);
+//  console.log(ev.target.id);
+//  console.log(el.id);
+var status;
+if(el.id == "to-do_task-holder"){
+    status = "Progress: To Do";
+}
+else if(el.id == "in-progress_task-holder"){
+    status = "Progress: In Progress";
+}
+else if(el.id == "in-review_task-holder"){
+    status = "Progress: In Review";
+}
+else{
+    status = "Progress: Done";
+}
+ var progressName = document.getElementById(data).querySelector("div");
+ progressName.innerText = status;
  el.appendChild(document.getElementById(data));
 }
 
@@ -27,6 +43,8 @@ var createNewTask = function(taskString){
     var taskName = document.createElement("label");
     var deleteButton = document.createElement("i");
     var editInput = document.createElement("input"); 
+    var progress = document.createElement("div");
+    progress.innerHTML = "Progress: To Do";
     editInput.type = "text";
     editInput.className = "edit";
     deleteButton.className= "material-icons";
@@ -42,11 +60,25 @@ var createNewTask = function(taskString){
     listItem.appendChild(taskName);
     listItem.appendChild(deleteButton);
     listItem.appendChild(editInput);
+    listItem.appendChild(progress);
     return listItem;
 }
 
 var editTask = function(){
-    var listItem = this.parentNode;
+    // var listItem=document.getElementById(this.id);
+    // // console.log(listItem);
+    // var editInput = $("#tasklist0").find(".edit").html();
+    // var taskName = $("#tasklist0").find(".taskName").html();
+    // var containsClass = listItem.classList.contains("editMode");
+    // if(containsClass) {
+    //     taskName = editInput;
+    // }
+    // else {
+    //     editInput = taskName;
+    // }
+    // listItem.classList.toggle("editMode");
+
+    var listItem = document.getElementById(this.id);
     var editInput = listItem.querySelector("input[type=text]");
     var taskName = listItem.querySelector("label");
     var containsClass = listItem.classList.contains("editMode");
@@ -62,7 +94,9 @@ var editTask = function(){
 var addTask = function(){
     if(taskInput.value !== ""){
         var listItem = createNewTask(taskInput.value);
-        // listItem.ondblclick = editTask;
+        var listId = listItem.getAttribute("id");
+        // listItem.addEventListener("dblclick",editTask(listId));
+        listItem.ondblclick = editTask;
         tasksHolder.appendChild(listItem);
         taskInput.value = "";
     }

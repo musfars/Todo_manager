@@ -42,7 +42,8 @@ header{
     font-size: 24px !important;
     font-weight: unset;
 }
- .chip{
+
+.chip{
      width: 100%;
      text-transform: unset !important;
      padding-top: 8px;
@@ -50,30 +51,33 @@ header{
      box-sizing: border-box;
      background-color: lightgoldenrodyellow;
      line-height: 60px;
- }
+}
  
- .chip i{
+.chip i{
      font-family: sans-serif;
- }
+}
 
-  ul{
+ul{
      height: 100%;
      /* min-height: 200px; */
-     padding-bottom: 40px;
- } 
+     padding-bottom: 60px;
+} 
  
- li{
+li{
      font-size: 20px !important;
- }
+}
 
- .taskName{
+.taskName{
      font-family: 'Patua One', cursive;
      font-size: 24px;
      color: #ec6b6b;
- }
+}
 
 .editMode input[type=text] {
   display:block;
+  font-family: 'Patua One', cursive;
+  font-size: 24px;
+  color: #ec6b6b;
 }
 
 .editMode label {
